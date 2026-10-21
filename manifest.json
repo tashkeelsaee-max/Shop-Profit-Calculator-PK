@@ -1,10 +1,11 @@
 {
   "name": "Shop Profit Calculator PK",
   "short_name": "Shop Profit PK",
-  "description": "A simple sales and profit calculator for small businesses in Pakistan.",
+  "description": "Track shop sales, stock, expenses and estimated profit in Pakistani Rupees.",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#f4f7f4",
-  "theme_color": "#15803d",
+  "background_color": "#f5f8f5",
+  "theme_color": "#166534",
   "icons": []
 }
