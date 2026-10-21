@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#15803d">
+  <title>Shop Profit Calculator PK</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark">₨</div>
+    <div><h1>Shop Profit Calculator</h1><p>Simple business tracking · Pakistan</p></div>
+  </header>
+
+  <main class="container">
+    <section class="summary-grid" aria-label="Summary">
+      <article class="summary-card"><span>Total Sales</span><strong id="totalSales">Rs 0</strong></article>
+      <article class="summary-card"><span>Total Cost</span><strong id="totalCost">Rs 0</strong></article>
+      <article class="summary-card profit-card"><span>Net Profit</span><strong id="netProfit">Rs 0</strong></article>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading"><div><h2>Calculate & Add Sale</h2><p>Enter your product details below.</p></div></div>
+      <form id="saleForm">
+        <label>Product name<input id="productName" type="text" placeholder="e.g. Chocolate box" required maxlength="80"></label>
+        <div class="two-col">
+          <label>Buying price (Rs)<input id="buyPrice" type="number" min="0" step="0.01" placeholder="100" required></label>
+          <label>Selling price (Rs)<input id="sellPrice" type="number" min="0" step="0.01" placeholder="150" required></label>
+        </div>
+        <div class="two-col">
+          <label>Quantity<input id="quantity" type="number" min="1" step="1" value="1" required></label>
+          <label>Extra expenses (Rs)<input id="expenses" type="number" min="0" step="0.01" value="0" required></label>
+        </div>
+        <div class="live-result">
+          <div><span>Estimated total sale</span><strong id="previewSales">Rs 0</strong></div>
+          <div><span>Estimated net profit</span><strong id="previewProfit">Rs 0</strong></div>
+          <div><span>Profit margin</span><strong id="previewMargin">0%</strong></div>
+        </div>
+        <button class="primary-btn" type="submit">＋ Save Sale</button>
+        <p class="small-note">Your records are saved in this browser on this device.</p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="history-heading">
+        <div><h2>Sales History</h2><p id="recordCount">No sales recorded yet</p></div>
+        <button id="exportBtn" class="secondary-btn" type="button">Export CSV</button>
+      </div>
+      <div class="filter-row">
+        <input id="searchInput" type="search" placeholder="Search products..." aria-label="Search products">
+        <select id="periodFilter" aria-label="Filter by period">
+          <option value="all">All records</option><option value="today">Today</option><option value="week">Last 7 days</option><option value="month">This month</option>
+        </select>
+      </div>
+      <div id="salesList" class="sales-list"><div class="empty-state">Your saved sales will appear here.</div></div>
+    </section>
+
+    <footer>Made for small businesses in Pakistan · Amounts shown in PKR</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
